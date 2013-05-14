@@ -30,16 +30,6 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
 		</dependency>
-		<dependency>
-			<groupId>org.eclipse.xtend</groupId>
-			<artifactId>org.eclipse.xtend.lib.gwt</artifactId>
-			<version>${xtend.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eclipse.xtext</groupId>
-			<artifactId>org.eclipse.xtext.xbase.lib.gwt</artifactId>
-			<version>${xtend.version}</version>
-		</dependency>
 	</dependencies>
 
 	<build>
@@ -63,17 +53,20 @@
 					</execution>
 				</executions>
 			</plugin>
-
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>gwt-maven-plugin</artifactId>
-				<version>${gwt.mvn.version}</version>
-				<configuration>
-					<compileSourcesArtifacts>
-						<artifact>org.eclipse.xtext:org.eclipse.xtext.xbase.lib</artifact>
-						<artifact>com.google.guava:guava-gwt</artifact>
-					</compileSourcesArtifacts>
-					<extraJvmArgs>-Xmx1000M</extraJvmArgs>
+				<groupId>org.commonjava.maven.plugins</groupId>
+				<artifactId>unsigner-maven-plugin</artifactId>
+				<version>0.3-SNAPSHOT</version>
+				<executions>
+					<execution> 
+						<id>unsign-jar</id>
+						<goals>
+							<goal>unsign</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>					
+					<processDependencies>true</processDependencies>
 				</configuration>
 			</plugin>
 		</plugins>

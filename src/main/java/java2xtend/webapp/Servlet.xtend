@@ -17,7 +17,7 @@ class Servlet extends HttpServlet {
 		val conv = new Java2Xtend
 		val in = req.inputStream
 		try {
-			val java = toString(in)
+			val java = toString(in) 
 			log.info(java)
 			val xtend = conv.toXtend(java)
 			log.info(xtend)

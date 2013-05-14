@@ -4,6 +4,9 @@ function conv(textarea) {
 	$.post('c', java)
 	.done(function(data) {
 		$('#xtend').html(data);
+	})
+	.fail(function(jsXHR, textStatus) {
+		$('#xtend').html("An error occurred. Sorry. ("+textStatus+")");
 	});
 }
 $('#java').bind('change', function() { conv(this) });
