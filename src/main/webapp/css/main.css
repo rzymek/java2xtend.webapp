@@ -14,6 +14,14 @@ textarea {
 	font-family: monospace;
 }
 
+#conv {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left:-25px;
+    margin-top:-61px;   
+}
+
 #java {
 	background-image: url(../img/java.svg);
 	background-size: 100% 100%;

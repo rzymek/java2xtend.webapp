@@ -1,6 +1,6 @@
-function conv(textarea) {
+function conv() {
 	$('#xtend').html("Converting...");
-	var java = textarea.value;
+	var java = $('#java').value;
 	$.post('c', java)
 	.done(function(data) {
 		$('#xtend').html(data);
@@ -9,6 +9,6 @@ function conv(textarea) {
 		$('#xtend').html("An error occurred. Sorry. ("+textStatus+")");
 	});
 }
-$('#java').bind('change', function() { conv(this) });
+$('#java').bind('change', function() { conv() });
 
 $('textarea').height($(window).height());
