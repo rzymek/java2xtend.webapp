@@ -1,15 +1,18 @@
 function conv() {
 	$('#xtend').html("Converting...");
-	var java = $('#java').value;
-	$.post('c', java)
-	.done(function(data) {
+	var java = $('#java').val();
+	$.post('c', java).done(function(data) {
 		$('#xtend').html(data);
-	})
-	.fail(function(jsXHR, textStatus) {
-		$('#xtend').html("An error occurred. Sorry. ("+textStatus+")");
+	}).fail(function(jsXHR, textStatus) {
+		$('#xtend').html("An error occurred. Sorry. (" + textStatus + ")");
 	});
 }
 
-$('#java').bind('change', function() { conv() });
+$('#java').bind('change', function() {
+	conv()
+});
 
-$('textarea').height($(window).height());
+function onresize() {
+	$('textarea').height($(window).height());
+}
+	
