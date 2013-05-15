@@ -7,9 +7,9 @@
 	<version>1.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<parent>
-		<relativePath>../gwt/pom.xml</relativePath>
+		<relativePath>../common/pom.xml</relativePath>
 		<groupId>webboards</groupId>
-		<artifactId>gwt</artifactId>
+		<artifactId>common</artifactId>
 		<version>1.1-SNAPSHOT</version>
 	</parent>
 
@@ -24,42 +24,6 @@
 		<dev.debug.port>8000</dev.debug.port>
 	</properties>
 
-	<dependencies>
-		<dependency>
-			<groupId>com.googlecode.objectify</groupId>
-			<artifactId>objectify</artifactId>
-			<version>4.0b1</version>
-		</dependency>
-		<dependency>
-			<groupId>no.eirikb</groupId>
-			<artifactId>gwt-channel-api</artifactId>
-			<version>0.1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.appengine</groupId>
-			<artifactId>appengine-api-1.0-sdk</artifactId>
-			<version>${gae.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.appengine</groupId>
-			<artifactId>appengine-testing</artifactId>
-			<version>${gae.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.google.appengine</groupId>
-			<artifactId>appengine-api-labs</artifactId>
-			<version>${gae.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.google.appengine</groupId>
-			<artifactId>appengine-api-stubs</artifactId>
-			<version>${gae.version}</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-
 	<build>
 		<outputDirectory>${outputDirectory}</outputDirectory>
 		<finalName>${project.artifactId}</finalName>
@@ -70,25 +34,6 @@
 			</resource>
 		</resources>
 		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>gwt-maven-plugin</artifactId>
-				<version>${gwt.mvn.version}</version>
-				<executions>
-					<execution>
-						<id>gwt-compile</id>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>compile</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<server>com.google.appengine.tools.development.gwt.AppEngineLauncher</server>
-					<appEngineVersion>${gae.version}</appEngineVersion>
-					<appEngineHome>gae</appEngineHome>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>com.google.appengine</groupId>
 				<artifactId>appengine-maven-plugin</artifactId>

@@ -14,6 +14,8 @@ class Servlet extends HttpServlet {
 	private static val log = Logger::getLogger(typeof(Servlet).name)
 	
 	override protected doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {		
+		resp.contentType = 'text/plain'
+		val out = resp.writer
 		val conv = new Java2Xtend
 		val in = req.inputStream
 		try {
@@ -21,8 +23,9 @@ class Servlet extends HttpServlet {
 			log.info(java)
 			val xtend = conv.toXtend(java)
 			log.info(xtend)
-			resp.contentType = 'text/plain'
-			resp.outputStream.print(xtend);		
+			out.print(xtend);
+		}catch(Exception ex) {
+			ex.printStackTrace(out)	
 		}finally{
 			closeQuietly(in);
 		}
