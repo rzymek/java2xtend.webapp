@@ -9,6 +9,7 @@ function conv() {
 		$('#xtend').html("An error occurred. Sorry. ("+textStatus+")");
 	});
 }
+
 $('#java').bind('change', function() { conv() });
 
 $('textarea').height($(window).height());
