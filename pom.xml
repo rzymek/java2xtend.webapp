@@ -17,6 +17,7 @@
 		<appid>java2xtend</appid>
 		<xtend.version>2.4.1-SNAPSHOT</xtend.version>
 		<gwt.mvn.version>2.5.0</gwt.mvn.version>
+		<jetty.port>8888</jetty.port>
 	</properties>
 
 	<dependencies>
@@ -58,18 +59,23 @@
 				<artifactId>unsigner-maven-plugin</artifactId>
 				<version>0.3-SNAPSHOT</version>
 				<executions>
-					<execution> 
+					<execution>
 						<id>unsign-jar</id>
 						<goals>
 							<goal>unsign</goal>
 						</goals>
 					</execution>
 				</executions>
-				<configuration>					
+				<configuration>
 					<processDependencies>true</processDependencies>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+			</plugin>
 		</plugins>
+
 	</build>
 
 	<repositories>
