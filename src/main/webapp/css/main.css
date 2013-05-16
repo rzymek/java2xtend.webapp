@@ -23,10 +23,9 @@ textarea {
 
 #conv {
 	position: fixed;
-	top: 50%;
+	bottom: 0;
 	left: 50%;
 	margin-left: -25px;
-	margin-top: -61px;
 }
 
 #java {
