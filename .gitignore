@@ -1,4 +1,5 @@
 .project
+/bees/
 .classpath
 target
 .*._trace
