@@ -25,6 +25,7 @@ public class Servlet extends HttpServlet {
   
   protected void doPost(final HttpServletRequest req, final HttpServletResponse resp) throws ServletException, IOException {
     resp.setContentType("text/plain");
+    resp.setCharacterEncoding("utf-8");
     final PrintWriter out = resp.getWriter();
     Java2Xtend _java2Xtend = new Java2Xtend();
     final Java2Xtend conv = _java2Xtend;

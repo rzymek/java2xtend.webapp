@@ -15,6 +15,7 @@ class Servlet extends HttpServlet {
 	
 	override protected doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {		
 		resp.contentType = 'text/plain'
+		resp.characterEncoding = 'utf-8'
 		val out = resp.writer
 		val conv = new Java2Xtend
 		val in = req.inputStream
